@@ -44,8 +44,8 @@ def check_email(email):
 def send_email_user(request): 
     try:
         decoded_req_body = request.body.decode('utf-8')
-        req_body = json.loads(decoded_req_body)
-        user_name=req_body.get("username")
+        req_body = json.loads(decoded_req_body) 
+        user_name=req_body.get("username") 
         send_to=req_body.get("send_to")
          
         if len(user_name)==0 or len(send_to)==0:
@@ -65,6 +65,8 @@ def send_email_user(request):
                     return Response({"message":"errors in sending emails."},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except :
             return Response({"message":"Internal Server Error"},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        # print(user_name)
+        return Response({"message":"check request body.username or mail may be null."},status=status.HTTP_400_BAD_REQUEST)
 
     except:
         return Response({"message":"please check request body format."},status=status.HTTP_400_BAD_REQUEST)
