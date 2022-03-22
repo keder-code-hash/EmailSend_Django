@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','https://sending1email.herokuapp.com/']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','sending1email.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
