@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','https://sending1email.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,11 +84,14 @@ WSGI_APPLICATION = 'CustomEmailSender.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['NAME'],
+        'HOST':os.environ['HOST'],
+        'PORT':5432,
+        'USER':os.environ['USER'],
+        'PASSWORD':os.environ['PASSWORD']
     }
-}
-
+} 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

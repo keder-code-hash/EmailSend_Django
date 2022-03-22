@@ -10,4 +10,4 @@ class EmailStore(models.Model):
     send_at=models.DateTimeField(default=datetime.now())
 
     def __str__(self):
-        return self.email
+        return self.username
