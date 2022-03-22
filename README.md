@@ -2,11 +2,13 @@
 ## Details :
     A simple APi for sending mail to any one.
 ## web API url : 
+<a href="https://sending1email.herokuapp.com/send_email">
 <pre>
 <code>
 https://sending1email.herokuapp.com/send_email
 </code>
 </pre>
+</a>
 **only POST request is supported**
 ## Request Body Format : 
 <pre>
